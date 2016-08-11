@@ -1,0 +1,101 @@
+﻿<html>
+<head>
+    <title>THFundWebApiApp</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- AppServer: The toolkitver meta tag is required -->
+    <meta name="toolkitver" content="1.0.9.6702" />
+    <link rel="stylesheet" type="text/css" href="webui/css/EikonWebUI.css">
+    <script src="Scripts/jquery-2.1.0.js"></script>
+    <script>
+        function getLTFFund(fundId) {
+            enableInputs(false);
+            var container = $('#result_container');
+            container.html($('<div>').addClass('throbber'));
+
+            $.ajax({
+                url: 'api/ltf/' + encodeURIComponent(fundId),
+                type: 'get',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.hasOwnProperty('funds')) {
+                        makeFundTable(container, result.funds);
+                    } else if (result.hasOwnProperty('fund')) {
+                        makeFundTable(container, $.makeArray(result.fund));
+                    } else if (result.hasOwnProperty('message')) {
+                        alert(result.message);
+                    }
+                    enableInputs(true);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.responseText);
+                    enableInputs(true);
+                }
+            });
+        }
+
+        function makeFundTable(container, data) {
+            var table = $('<table>').addClass('basic-table links-alt-color');
+            var thead = $('<thead>').append(
+                $('<tr>').append(
+                    $('<th>').text('Fund ID'),
+                    $('<th>').text('Fund Name'),
+                    $('<th>').text('As of Date'),
+                    $('<th>').text('NAV').addClass('text-right'),
+                    $('<th>').text('Offer Price').addClass('text-right'),
+                    $('<th>').text('Bid Price').addClass('text-right')
+                )
+            );
+            var tbody = $('<tbody>');
+            $.each(data, function(rowIndex, item) {
+                $('<tr>').append(
+                    $('<td>').text(item.fundID),
+                    $('<td>').text(item.fundName),
+                    $('<td>').text(item.asOfDate),
+                    $('<td>').text(item.nav).addClass('text-right'),
+                    $('<td>').text(item.offer).addClass('text-right'),
+                    $('<td>').text(item.bid).addClass('text-right')
+                ).appendTo(tbody);
+            });
+            thead.appendTo(table);
+            tbody.appendTo(table);
+            container.html(table);
+        }
+
+        function enableInputs(enable) {
+            var fundIdInput = $('#ltf_id_input');
+            var goBtn       = $('#go_btn');
+            var clearBtn    = $('#clear_btn');
+
+            fundIdInput.prop('disabled', !enable);
+            goBtn.prop('disabled', !enable);
+            clearBtn.prop('disabled', !enable);
+        }
+    </script>
+    <style>
+        html body {
+            padding: 1em;
+        }
+        .button-split > * {
+            vertical-align: middle;
+        }
+        .button-split img {
+            margin-right: 10px;
+        }
+        p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<!-- AppServer: Set the page's title in top window onload -->
+<body onload="window.top.document.title = document.title;">
+    <div class="button-split">
+        <img src="Images/Logo.png" />
+        <span>
+            <input type="text" id="ltf_id_input" class="large-style highlight" placeholder="Enter LTF Fund ID" />
+            <button id="go_btn" class="large-style" onclick="getLTFFund(ltf_id_input.value)">Go</button>
+            <button id="clear_btn" class="large-style icon" onclick="ltf_id_input.value = ''"><span class="icon-cross"></span></button>
+        </span>
+    </div>
+    <p><span id="result_container"></span></p>
+</body>
+</html>

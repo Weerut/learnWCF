@@ -1,0 +1,57 @@
+{
+	"id": "d550b780-13af-81ae-522e-07712f2ac218",
+	"name": "UserInfoService",
+	"description": "",
+	"order": [
+		"034994c4-851f-d63f-6db1-c2ffa1bfefb7",
+		"f5b5578c-29c1-cf04-1734-694c0d0a7344"
+	],
+	"folders": [],
+	"timestamp": 1437130341570,
+	"owner": "",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "034994c4-851f-d63f-6db1-c2ffa1bfefb7",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8989/UserInfoService/GetUserInfo?uuid=PAXTRA78597",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "d550b780-13af-81ae-522e-07712f2ac218",
+			"data": [],
+			"dataMode": "params",
+			"name": "GetUserInfo (GET)",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1437130341570,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "f5b5578c-29c1-cf04-1734-694c0d0a7344",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8989/UserInfoService/GetUserInfoReq",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "d550b780-13af-81ae-522e-07712f2ac218",
+			"data": [],
+			"dataMode": "raw",
+			"name": "GetUserInfoReq (POST with fields)",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1437131188566,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"fields\" : [\"UUID\", \"ContactTitle\", \"FirstName\", \"LastName\", \"EmailAddress\"],\n    \"uuid\": \"PAXTRA78597\"\n}"
+		}
+	]
+}

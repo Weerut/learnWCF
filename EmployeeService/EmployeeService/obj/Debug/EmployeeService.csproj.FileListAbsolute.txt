@@ -1,0 +1,5 @@
+C:\SOURCE\EmployeeService\EmployeeService\obj\Debug\EmployeeService.csprojResolveAssemblyReference.cache
+C:\SOURCE\EmployeeService\EmployeeService\bin\Debug\EmployeeService.dll
+C:\SOURCE\EmployeeService\EmployeeService\bin\Debug\EmployeeService.pdb
+C:\SOURCE\EmployeeService\EmployeeService\obj\Debug\EmployeeService.dll
+C:\SOURCE\EmployeeService\EmployeeService\obj\Debug\EmployeeService.pdb

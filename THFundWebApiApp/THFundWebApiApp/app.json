@@ -1,0 +1,7 @@
+﻿{
+	"name": "THFundWebApiApp",
+	"displayName": "THFundWebApiApp",
+	"version" : "0.0.7",
+	"description" : "THFundWebApiApp WebApi app",
+	"defaultPlatform" : "WebApi"
+}

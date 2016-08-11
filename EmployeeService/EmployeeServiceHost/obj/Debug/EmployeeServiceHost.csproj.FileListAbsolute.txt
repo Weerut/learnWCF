@@ -1,0 +1,8 @@
+C:\SOURCE\EmployeeService\EmployeeServiceHost\bin\Debug\EmployeeServiceHost.exe.config
+C:\SOURCE\EmployeeService\EmployeeServiceHost\bin\Debug\EmployeeServiceHost.exe
+C:\SOURCE\EmployeeService\EmployeeServiceHost\bin\Debug\EmployeeServiceHost.pdb
+C:\SOURCE\EmployeeService\EmployeeServiceHost\obj\Debug\EmployeeServiceHost.csprojResolveAssemblyReference.cache
+C:\SOURCE\EmployeeService\EmployeeServiceHost\obj\Debug\EmployeeServiceHost.exe
+C:\SOURCE\EmployeeService\EmployeeServiceHost\obj\Debug\EmployeeServiceHost.pdb
+C:\SOURCE\EmployeeService\EmployeeServiceHost\bin\Debug\EmployeeService.dll
+C:\SOURCE\EmployeeService\EmployeeServiceHost\bin\Debug\EmployeeService.pdb
